@@ -6,6 +6,10 @@ List of topics covered:
 
 * [Adding a websocket handler as a server extension](https://github.com/jupyter-server/contributing-hour/tree/2022-04-07)
 
+## Tips and tricks we've all learned
+
+* `jupyter server --autoreload` runs a Jupyter Server that autoreloads the webapp and all imported Python packages
+    when any changes are made to any Python src files in server or extensions.
 
 ## How this repo is organized
 
