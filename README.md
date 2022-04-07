@@ -2,7 +2,7 @@
 
 This is a repo that hosts projects/demos we tackled during Jupyter Server's weekly contributing hour.
 
-List of topics covered:
+## List of topics covered:
 
 * [Adding a websocket handler as a server extension](https://github.com/jupyter-server/contributing-hour/tree/2022-04-07)
 
