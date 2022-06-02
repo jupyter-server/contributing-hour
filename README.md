@@ -1,17 +1,91 @@
-# Contributing Hour Whiteboard
+# server_database_extension
 
-This is a repo that hosts projects/demos we tackled during Jupyter Server's weekly contributing hour.
+[![Github Actions Status](https://github.com/Zsailer/server_database_extension/workflows/Build/badge.svg)](https://github.com/Zsailer/server_database_extension/actions/workflows/build.yml)
 
-## List of topics covered:
+A Jupyter Server extension.
 
-* [Adding a websocket handler as a server extension](https://github.com/jupyter-server/contributing-hour/tree/2022-04-07)
+## Requirements
 
-## Tips and tricks we've all learned
+- Jupyter Server
 
-* `jupyter server --autoreload` runs a Jupyter Server that autoreloads the webapp and all imported Python packages
-    when any changes are made to any Python src files in server or extensions.
+## Install
 
-## How this repo is organized
+To install the extension, execute:
 
-We create a new branch each week that contains the code we wrote together. We'll add references
-to those branches in this README for easy search/access.
+```bash
+pip install server_database_extension
+```
+
+## Uninstall
+
+To remove the extension, execute:
+
+```bash
+pip uninstall server_database_extension
+```
+
+## Troubleshoot
+
+If you are seeing the frontend extension, but it is not working, check
+that the server extension is enabled:
+
+```bash
+jupyter server extension list
+```
+
+## Contributing
+
+### Development install
+
+```bash
+# Clone the repo to your local environment
+# Change directory to the server_database_extension directory
+# Install package in development mode - will automatically enable
+# The server extension.
+pip install -e .
+```
+
+
+You can watch the source directory and run your Jupyter Server-based application at the same time in different terminals to watch for changes in the extension's source and automatically rebuild the extension.  For example,
+when running JupyterLab:
+
+```bash
+jupyter lab --autoreload
+```
+
+If your extension does not depend a particular frontend, you can run the
+server directly:
+
+```bash
+jupyter server --autoreload
+```
+
+### Running Tests
+
+Install dependencies:
+
+```bash
+pip install -e ".[test]"
+```
+
+To run the python tests, use:
+
+```bash
+pytest
+
+# To test a specific file
+pytest server_database_extension/tests/test_handlers.py
+
+# To run a specific test
+pytest server_database_extension/tests/test_handlers.py -k "test_get"
+```
+
+### Development uninstall
+
+```bash
+pip uninstall server_database_extension
+```
+
+### Packaging the extension
+
+See [RELEASE](RELEASE.md)

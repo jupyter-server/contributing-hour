@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling>=1.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "server_database_extension"
+authors = [{name = "Jupyter Server Contributors", email = "zachsailer@gmail.com"}]
+dynamic = ["version"]
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["Jupyter", "Extension"]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Framework :: Jupyter",
+]
+dependencies = ["jupyter_server>=1.6,<2"]
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "jupyter_server[test]"
+]
+
+[project.license]
+file="LICENSE"
+
+[project.urls]
+Home = "https://github.com/Zsailer/server_database_extension"
+
+[tool.hatch.version]
+path = "server_database_extension/__init__.py"
+
+[tool.hatch.build.targets.wheel.shared-data]
+"jupyter-config" = "etc/jupyter"
+
+[tool.black]
+line_length = 100
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  "error",
+  "ignore:There is no current event loop:DeprecationWarning"
+]
+
+[tool.jupyter_releaser]
+skip = ["check-links"]
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+pretty = true
+show_error_context = true
+show_error_codes = true
+strict_equality = true
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
