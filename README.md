@@ -5,6 +5,7 @@ This is a repo that hosts projects/demos we tackled during Jupyter Server's week
 ## List of topics covered:
 
 * [Adding a websocket handler as a server extension](https://github.com/jupyter-server/contributing-hour/tree/2022-04-07)
+* [Jupyter Server Extension backed by a SQLite Database](https://github.com/jupyter-server/contributing-hour/tree/2022-06-02)
 
 ## Tips and tricks we've all learned
 
